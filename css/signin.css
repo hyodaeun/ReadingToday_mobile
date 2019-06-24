@@ -1,0 +1,101 @@
+@import url("default.css");
+
+body{
+    font-family: 'Jeju Myeongjo';
+    background-color: #fac5c5;
+}
+
+.SignInForm{
+border: 10px solid #fa7a7a;
+background-color: white;
+position: absolute;
+width: 700px;
+height: 800px;
+margin: 0 auto;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+display: block;
+text-align: center;
+border-radius: 130px;
+}
+
+.loginContents{
+margin:  0 auto;
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+}
+
+.buttonInput{
+width: 110px;
+height: 37px;
+background-color: white;
+transition-duration: 0.2s;
+border: none;
+box-shadow:  1px 2px 2px rgb(189, 189, 189);
+margin-left: 70px;
+display: inline-block;
+color: rgb(110, 110, 110);
+font-size: 10pt;
+}
+
+.buttonInput:hover{
+border: none;
+cursor: pointer;
+outline: 3px solid #fa7a7a;
+transition-duration: 0s;
+}
+
+.buttonInput:focus{
+border:none;
+background-color: white;
+transition-duration: 0.2s;
+}
+
+.colorPick{
+  border: none;
+}
+
+input[type=color]{
+  width: 20px;
+  margin-right: 15px;
+}
+
+.defaultInput{
+background-color: white;
+border: none;
+margin-bottom: 30px;
+width: 100%;
+height: 40px;
+border-bottom: 3px solid #fac5c5;
+font-size: 14pt;
+}
+
+.defaultInput:hover{
+border-bottom: 3px solid #fa7a7a;
+}
+
+.defaultInput:focus{
+outline: none;
+border-bottom: 3px solid #fa7a7a;
+}
+
+.inputs{
+
+border: none;
+display: inline-block;
+width: 500px;
+position: relative;
+margin-top: 50px;
+text-align: center;
+}
+
+.buttons{
+border: none;
+display: inline-block;
+width: 500px;
+position: relative;
+margin-top: 50px;
+text-align: center;
+}

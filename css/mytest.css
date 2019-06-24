@@ -1,0 +1,520 @@
+@import url("default.css");
+
+body{
+    font-family: 'Jeju Myeongjo';
+    background-color: white;
+    margin: 0vh 0.2vw 0vh;
+    margin-top: 2vh;
+}
+
+/*지움(수정)*/
+/*
+.mainDiv{
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 50px;
+  width: 90%;
+  position: absolute;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  text-align: center;
+}
+*/
+
+.mainTable{
+  float: left;
+  width: 30%;
+  padding: 15px;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+}
+
+.mainForm{
+  float: right;
+  width: 60%;
+  padding: 15px;
+  text-align: center;
+}
+
+.tables{
+  border: 3px solid #A99F92;
+  height: auto;
+  width: 455px;
+  table-layout: fixed;
+  text-align: center;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.tables .firstLine{
+  border-bottom: 2px solid #A99F92;
+  background-color: #A99F92;
+  color: white;
+}
+
+.tables td{
+  border: 1px solid red;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+}
+
+.tables tr > td:nth-child(1){
+  border-right: 2px solid #A99F92;
+  background-color: #A99F92;
+  color: white;
+}
+
+.tables tr{
+  text-align: center;
+}
+
+/*0518효은수정
+.feelCheck{
+  height: 10vh;
+  line-height: 10vh;
+}
+
+select{
+  margin-left: 1vw;
+  border: 3px solid #513E05;
+  padding: 6px 16px;
+  color: #513E05;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+
+select:focus{
+  outline: none !important;
+}
+
+select option{
+  background-color: #A99F92;
+}
+
+select option:hover{
+  background-color: #fff;
+}*/
+/*여기까지*/
+
+.Contents{
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1vh;
+}
+
+.ContentsSaved{
+  position: relative;
+  display: inline-block;
+  border: 3px solid #A99F92;
+  font-size: 2.5em;
+  /* height: 450px; */
+  padding: 50px 0px 50px 0px;
+  width: 40vw;
+  height: 50vh;
+}
+
+.ContentsSaved:hover, .ContentsSaved:focus{
+  outline: none !important;
+  border: 3px solid #513E05;
+}
+
+/*0430효은수정(두께)*/
+textarea{
+  border: 1px solid #A99F92;
+  font-size: 2.5em;
+  color: black;
+  resize: none;
+  background-color: transparent;
+  width: 40vw;
+  height: 50vh;
+}
+/*여기까지*/
+
+textarea:hover, textarea:focus{
+  outline: none !important;
+}
+
+.writeButton{
+border-radius: 10px;
+width: 5vw;
+height: 4vh;
+background-color: #A99F92;
+transition-duration: 0.2s;
+border: none;
+box-shadow:  1px 2px 2px rgb(189, 189, 189);
+margin-left: 70px;
+display: inline-block;
+color: #513E05;
+font-size: 1.5em;
+margin: 0 auto;
+}
+
+.writeButton:hover{
+border: none;
+cursor: pointer;
+color: white;
+transition-duration: 0s;
+background-color: #513E05;
+}
+
+.writeButton:focus{
+border:none;
+background-color: white;
+transition-duration: 0.2s;
+}
+
+.Contents span{
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+#counter{
+  color: white;
+  background:rgba(169,159,146,0.5);
+  border-radius: 0.5em;
+  padding: 0.5em 0.5em;
+  font-size: 0.75em;
+  margin-right: 0.3vw;
+  margin-bottom: 0.3vw;
+}
+/*0520 효은 폼 수정*/
+
+.diaryForm {
+    margin: 5%;
+    padding-bottom: 5%;
+      /*0518효은수정
+    box-shadow: -60px 0px 100px -90px #000000,
+        60px 0px 100px -90px #000000;*/
+    border: none;
+
+}
+.feelCheck{
+  height: 20vh;
+  line-height: 20vh;
+}
+.box {
+  border: 1px solid A99F92;
+  border-radius: 40px;
+  box-shadow: -60px 0px 100px -90px #000000,
+        60px 0px 100px -90px #000000;
+}
+.writeButton{
+border-radius: 3px;
+width: auto;
+height: auto;
+padding: 0.7vw;
+background-color: #A99F92;
+transition-duration: 0.2s;
+border: none;
+box-shadow:  1px 2px 2px rgb(189, 189, 189);
+margin-left: 70px;
+display: inline-block;
+color: #513E05;
+font-size: 1em;
+margin: 0 auto;
+}
+
+.writeButton:hover{
+  border: none;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  transition: all 0.2s cubic-bezier(.4,0,.2,1);
+}
+
+select {
+  background-color: #e6e6e6;
+  border: none;
+  width: 200px;
+  padding: .8em .5em;
+  font-family: inherit;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0px;
+}
+
+select::-ms-expand {
+  /* for IE 11 */
+  display: none;
+}
+
+
+
+/*0430효은수정(여백수정, 그림자추가)
+.diaryForm {
+    margin: 10%;
+    padding-bottom: 5%;
+      /*0518효은수정
+    box-shadow: -60px 0px 100px -90px #000000,
+        60px 0px 100px -90px #000000;
+    border: none;
+
+}
+*/
+
+
+.diaryResult {
+    margin: 10%;
+    padding-bottom: 5%;
+    box-shadow: 2px 2px 10px darkgray inset;
+}
+.colorSelect {
+    width: 10vw;
+    height: 4vh;
+    font-size: 0.5em;
+}
+
+/*오늘 날짜로 돌아가는 버튼 디자인 및 효과 (추가)*/
+.btn {
+    margin-left: 12vw;
+    width: 4vw;
+    height: 3vh;
+	position: relative;
+	padding: 1.2rem 4.2rem 1.2rem 2rem;
+	font-size: 1
+	color: #513E05;
+	letter-spacing: 1rem;
+	text-transform: uppercase;
+	transition: all 600ms cubic-bezier(0.77, 0, 0.175, 1);
+	cursor: pointer;
+	user-select: none;
+    text-align: center;
+}
+
+.btn:before, .btn:after {
+	content: '';
+	position: absolute;
+	transition: inherit;
+	z-index: -1;
+}
+
+.btn:hover {
+	color: #513E05;
+	transition-delay: .6s;
+}
+
+.btn:hover:before {
+	transition-delay: 0s;
+}
+
+.btn:hover:after {
+	background: #513E05;
+	transition-delay: .4s;
+}
+
+.today:before,
+.today:after {
+	top: 0;
+	width: 0;
+	height: 100%;
+}
+
+.today:before {
+	right: 0;
+	border: 1px solid #513E05;
+	border-left: 0;
+	border-right: 0;
+}
+
+.today:after {
+	left: 0;
+}
+
+.today:hover:before,
+.today:hover:after {
+	width: 100%;
+}
+/*여기까지*/
+
+/*이미지 로고 추가(수정)*/
+
+/*0518효은수정
+.btn:hover:before {
+	transition-delay: 0s;
+}
+
+.btn:hover:after {
+	background: #513E05;
+	transition-delay: .4s;
+}
+
+.today:before,
+.today:after {
+	top: 0;
+	width: 0;
+	height: 100%;
+}
+
+.today:before {
+	right: 0;
+	border: 1px solid #513E05;
+	border-left: 0;
+	border-right: 0;
+}
+
+.today:after {
+	left: 0;
+}
+
+.today:hover:before,
+.today:hover:after {
+	width: 100%;
+}
+*/
+
+/*이미지 로고 추가(수정)*/
+/*0516효은수정
+.logo {
+    margin-top: 3vh;
+    margin-right: 1vw;
+    float: right;
+    width: 25vw;
+    height: 15vh;
+}*/
+
+/*0430효은수정*/
+.fCheck1 {
+    font-size: 50px;
+}
+
+/*0515효은수정*/
+/*.fCheck2 {
+    font-size: 40px;
+}*/
+
+.logout {
+  font-size: .10em;
+  position: relative;
+  right: -18px;
+  bottom: -4px;
+  overflow: hidden;
+  letter-spacing: 3px;
+  opacity: 0;
+  transition: opacity .45s;
+  -webkit-transition: opacity .35s;
+
+}
+
+#idLogout {
+  border-radius: 50px;
+  border: 0px transparent solid;
+  text-decoration: none;
+  float: left;
+  padding: 12px;
+  margin: 15px;
+  color: transparent;
+  width: 45px;
+  background: linear-gradient(to right bottom, #513E05, #A99F92);
+  transition: width .35s;
+  -webkit-transition: width .35s;
+  overflow: hidden
+}
+
+#idLogout:hover {
+  color: white;
+  width: 100px;
+}
+
+#idLogout:hover .logout{
+  opacity: .9;
+}
+
+#idLogout {
+  text-decoration: none;
+}
+
+/*0518효은수정
+input[list]
+{
+  margin-left:auto;
+    margin-right:auto;
+    max-width: 500px;
+    background: #D2E9FF;
+    padding: 90px 20px 20px 20px;
+    font: 20px Arial, Helvetica, sans-serif;
+    color: #666;
+}*/
+/*여기까지*/
+
+/*메뉴 바*/
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Lato:300,400,700');
+html, body, h1, h2, h3, h4, h5, h6, p, li, ol, ul, pre {
+	margin: 0;
+	padding: 0;
+}
+html, body { min-height: 100%; }
+
+body {
+	color: #eee;
+	font-family: 'Lato', sans-serif;
+	font-size: 62.5%;
+	padding: 5 10px;
+	box-sizing: border-box;
+}
+
+/* Appearance */
+.links {
+	background-color: white;
+	border-bottom: 1px solid #0003;
+	box-shadow: 0 0 32px #0003;
+	font-size: 2em;
+	font-weight: 300;
+}
+.links > a {
+	height: 8vh; line-height: 10vh; color: #414c13;
+	padding: .75em;
+	text-align: center;
+	text-decoration: none;
+	transition: all .5s;
+}
+.links > a:hover {
+	background: white;
+	color: #414c13;
+}
+.links > .line {
+	background: #414c13;
+	height: 1px;
+	pointer-events: none;
+}
+
+/* The Magic */
+#header {
+	position: fixed;
+	left: 0;
+	right: 0;
+}
+.links {
+	display: grid;
+	grid-template-columns: repeat(var(--items), 1fr);
+	position: relative;
+}
+.links > .line {
+	opacity: 0;
+	transition: all .5s;
+	position: absolute;
+	bottom: 0;
+	left: var(--left, calc(100% / var(--items) * (var(--index) - 1)));
+	width: var(--width, calc(100% / var(--items)));
+	--index: 0;
+}
+.links > a:hover ~ .line {
+	opacity: 1;
+}
+
+.links > a:nth-of-type(1):hover ~ .line { --index: 1; }
+.links > a:nth-of-type(2):hover ~ .line { --index: 2; }
+.links > a:nth-of-type(4):hover ~ .line { --index: 4; }
+.links > a:nth-of-type(5):hover ~ .line { --index: 5; }
+.links > a:nth-of-type(6):hover ~ .line { --index: 6; }
+.links > a:nth-of-type(7):hover ~ .line { --index: 7; }
+.links > a:nth-of-type(8):hover ~ .line { --index: 8; }
+.links > a:nth-of-type(9):hover ~ .line { --index: 9; }
+.links > a:nth-of-type(10):hover ~ .line { --index: 10; }
+.links > a:last-of-type:hover ~ .line { --index: var(--items); }

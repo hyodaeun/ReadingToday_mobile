@@ -1,0 +1,590 @@
+@import url("default.css");
+
+body{
+    font-family: 'Jeju Myeongjo';
+    background-color: white;
+    margin: 0vh 0.2vw 0vh;
+    margin-top: 2vh;
+}
+
+/* .f_table {
+  height: 100%;
+  width: 100%;
+/*  margin-top: 5vh;
+} */
+.mainForm{
+  float: right;
+  width: 60%;
+  padding: 15px;
+  text-align: center;
+}
+.tables{
+    border: 3px solid #A99F92;
+    width: 100%;
+    height: auto;
+    table-layout: fixed;
+    text-align: center;
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+.tables .firstLine{
+  border-bottom: 2px solid #A99F92;
+  background-color: #A99F92;
+  color: white;
+}
+
+.tables td{
+  border: 1px solid #A99F92;
+  /* width: 35px;
+  height: 35px; */
+  padding: 2.7vw;
+  text-align: center;
+  /* word-break: break-all; */
+}
+
+.tables tr > td:nth-child(1){
+  border-right: 2px solid #A99F92;
+  background-color: #A99F92;
+  color: white;
+  text-align: center;
+}
+
+.tables tr{
+  text-align: center;
+}
+
+.Contents{
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1vh;
+}
+
+.ContentsSaved{
+  position: relative;
+  display: inline-block;
+  border: 3px solid #A99F92;
+  font-size: 2.5em;
+  width: 30vw;
+  height: 30vw;
+  color: #A99F92;
+  text-align: justify;
+  padding: .25em;
+}
+
+/*0430효은수정(두께)*/
+textarea{
+    border: 1px solid #A99F92;
+    font-size: 3em;
+    color: black;
+    resize: none;
+    background-color: transparent;
+    width: 55vw;
+    height: 40vw;
+}
+/*여기까지*/
+
+textarea:hover, textarea:focus{
+  outline: none !important;
+}
+
+.Contents span{
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+#counter{
+    color: white;
+    background: rgba(169,159,146,0.5);
+    border-radius: 0.5em;
+    padding: 0.5em 0.5em;
+    font-size: 1.5em;
+    margin-right: 0.3vw;
+    margin-bottom: 0.3vw;
+}
+/*0520 효은 폼 수정*/
+
+.diaryForm {
+    margin: 5%;
+    padding-bottom: 5%;
+    border: none;
+}
+/*
+.feelCheck{
+  height: 10vh;
+}
+*/
+
+.box {
+  background: #fff;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  height: 70vw;
+  border: 1px solid A99F92;
+  border-radius: 40px;
+  box-shadow: -60px 0px 100px -90px #000000,
+        60px 0px 100px -90px #000000;
+}
+.writeButton{
+    border-radius: 3px;
+    width: auto;
+    height: auto;
+    padding: 0.7vw 1vw;
+    background-color: #A99F92;
+    transition-duration: 0.2s;
+    border: none;
+    box-shadow: 1px 2px 2px rgb(189, 189, 189);
+    display: inline-block;
+    color: #513E05;
+    font-size: 2.5em;
+}
+
+.writeButton:hover{
+  border: none;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  transition: all 0.2s cubic-bezier(.4,0,.2,1);
+}
+/*
+select {
+  background-color: #e6e6e6;
+  border: none;
+  width: auto;
+  font-size: 2em;
+  height: auto;
+  padding: .8em .8em;
+  font-family: inherit;
+  margin: 2vh;
+}
+
+select::-ms-expand {
+  display: none;
+}*/
+
+.diaryResult {
+    padding-bottom: 5%;
+    border: none;
+}
+.colorSelect {
+    width: 10vw;
+    height: 4vh;
+    font-size: 0.5em;
+}
+
+/*오늘 날짜로 돌아가는 버튼 디자인 및 효과 (0521수정)
+.btn {
+    width: 100%;
+    height: auto;
+    padding: 1vw;
+	position: relative;
+	font-size: 1.5em;
+    font-weight: bold;
+	color: #513E05;
+	letter-spacing: 1rem;
+	text-transform: uppercase;
+	transition: all 600ms cubic-bezier(0.77, 0, 0.175, 1);
+	cursor: pointer;
+	user-select: none;
+    text-align: center;
+    margin-bottom: 2vh;
+}
+
+.btn:before, .btn:after {
+	content: '';
+	position: absolute;
+	transition: inherit;
+	z-index: -1;
+}
+
+.btn:hover {
+	color: #513E05;
+	transition-delay: .6s;
+}
+
+.btn:hover:before {
+	transition-delay: 0s;
+}
+
+.btn:hover:after {
+	background: #513E05;
+	transition-delay: .6s;
+}
+
+.today:before,
+.today:after {
+	top: 0;
+	width: 0;
+	height: 100%;
+}
+
+.today:before {
+	right: 0;
+	border: 1px solid #513E05;
+	border-left: 0;
+	border-right: 0;
+}
+
+.today:after {
+	left: 0;
+}
+
+.today:hover:before,
+.today:hover:after {
+	width: 100%;
+}
+*/
+
+/*0430효은수정*/
+.fCheck1 {
+    font-size: 3em;
+    height: 10vh;
+    line-height: 10vh;
+    color: #513E05;
+    font-weight: bold;
+}
+
+.logout {
+  font-size: .10em;
+  position: relative;
+  right: -18px;
+  bottom: -4px;
+  overflow: hidden;
+  letter-spacing: 3px;
+  opacity: 0;
+  transition: opacity .45s;
+   -webkit-transition: opacity .35s;
+
+}
+
+#idLogout {
+  border-radius: 50px;
+  border: 0px transparent solid;
+  text-decoration: none;
+  float: left;
+  padding: 12px;
+  margin: 15px;
+  color: transparent;
+  width: 45px;
+  background: linear-gradient(to right bottom, #513E05, #A99F92);
+  transition: width .35s;
+ -webkit-transition: width .35s;
+  overflow: hidden
+}
+
+#idLogout:hover {
+  color: white;
+  width: 100px;
+}
+
+#idLogout:hover .logout{
+  opacity: .9;
+}
+
+#idLogout {
+  text-decoration: none;
+}
+
+/*메뉴 바*/
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Lato:300,400,700');
+html, body, h1, h2, h3, h4, h5, h6, p, li, ol, ul, pre {
+	margin: 0;
+	padding: 0;
+}
+html, body { min-height: 100%; }
+
+body {
+    padding: 0 1vw;
+	color: #eee;
+	font-size: 62.5%;
+	box-sizing: border-box;
+}
+
+
+/* Appearance */
+.links {
+	background-color: white;
+    /*box-shadow: 0 0 32px #0003;*/
+	font-size: 2em;
+	font-weight: 300;
+}
+.links > .menutag, .dropdown > .menutag, .menuhover {
+	height: 4vh; line-height: 4vh; color: #414c13;
+	padding: .75em;
+	text-align: center;
+	text-decoration: none;
+	transition: all .5s;
+
+}
+
+.menulogo {
+    padding-top: 1vh;
+}
+
+.dropdown {
+  width: 20vw;
+  text-align: center;
+  line-height: 4vh;
+  padding-top: .75em;
+  padding-bottom: .75em;
+}
+
+.links > .menutag:hover {
+	background: white;
+	color: #414c13;
+}
+.links > .line {
+	background: #A99F92;
+	height: 4px;
+	pointer-events: none;
+}
+
+/* The Magic */
+#header {
+	left: 0;
+	right: 0;
+    margin-top: 1vw;
+}
+.links {
+	display: grid;
+	grid-template-columns: repeat(var(--items), 1fr);
+	position: relative;
+}
+.links > .line {
+	opacity: 0;
+	transition: all .5s;
+	position: absolute;
+	bottom: 0;
+	left: var(--left, calc(100% / var(--items) * (var(--index) - 1)));
+	width: var(--width, calc(100% / var(--items)));
+	--index: 0;
+}
+.links > .menuhover:hover ~ .line {
+	opacity: 1;
+}
+
+.links > .menuhover:nth-of-type(1):hover ~ .line { --index: 2; }
+.links > .menuhover:nth-of-type(3):hover ~ .line { --index: 4; }
+.links > .menuhover:nth-of-type(4):hover ~ .line { --index: 5; }
+
+/*modal*/
+#DialogOutLogin {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 2;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+#loginDialogIn {
+  margin: 0 auto;
+  /* 15% from the top and centered */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  width: 45vw;
+  height: 45vw;
+  /* Could be more or less, depending on screen size */
+  text-align: center;
+}
+
+#loginDialogContent {
+  position: absolute;
+  width: 29vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#closeLogin {
+  color: #aaa;
+  float: right;
+  font-size: 4em;
+  font-weight: bold;
+  z-index: 3;
+}
+
+#closeLogin:hover, #closeLogin:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ===== Select Box ===== */
+.sel {
+    font-size: 1rem;
+    display: inline-block;
+    margin: 3em 2em;
+    width: 350px;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.sel::before {
+  position: absolute;
+  content: '\f063';
+  font-size: 2em;
+  color: #FFF;
+  right: 20px;
+  top: calc(50% - 0.5em);
+  display: none; /*0524 화살표 아이콘 안보이게*/
+}
+
+.sel.active::before {
+  transform: rotateX(-180deg);
+}
+
+.sel__placeholder {
+  display: block;
+  font-size: 2.3em;
+  color: #838e95;
+  padding: 0.2em 0.5em;
+  text-align: left;
+  pointer-events: none;
+  user-select: none;
+  visibility: visible;
+  text-align: center;
+}
+
+.sel.active .sel__placeholder {
+  visibility: hidden;
+}
+
+.sel__placeholder::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.2em 0.5em;
+  content: attr(data-placeholder);
+  visibility: hidden;
+}
+
+.sel.active .sel__placeholder::before {
+  visibility: visible;
+}
+
+.sel__box {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: -4px;
+  display: none;
+  list-style-type: none;
+  text-align: left;
+  font-size: 10pt;
+  background-color: #FFF;
+  width: calc(100% + 8px);
+  box-sizing: border-box;
+}
+
+.sel.active .sel__box {
+  display: block;
+  animation: fadeInUp 500ms;
+}
+
+.sel__box__options {
+  display: list-item;
+  font-size: 1.5em;
+  color: #838e95;
+  padding: 0.5em 1em;
+  user-select: none;
+}
+
+.sel__box__options::after {
+  content: '\f00c';
+  font-size: 0.5em;
+  margin-left: 5px;
+  display: none;
+}
+
+.sel__box__options.selected::after {
+  display: inline;
+}
+
+.sel__box__options:hover {
+  background-color: #ebedef;
+}
+
+/* ----- Select Box Black Panther ----- */
+.sel {
+  border-bottom: 4px solid rgba(0, 0, 0, 0.3);
+}
+
+/* ----- Select Box Superman ----- */
+.sel--superman {
+/*   display: none; */
+  z-index: 2;
+}
+
+/* ===== Keyframes ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  width: 20vw;
+
+}
+
+.dropdown-content a {
+  float: none;
+  color: rgba(0, 0, 0, 0.44);
+  padding: 12px 16px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  cursor: default;
+}
+
+.dropdown:hover .dropdown-content{
+  display: block;
+}
