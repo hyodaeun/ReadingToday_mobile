@@ -53,10 +53,10 @@ session_start();
           <input type="password" name="pwLogin" id="pwLogin" placeholder="PASSWORD"><br />
           <input type="submit" name="loginBtn" id="loginBtn" value="로그-인" />
         </form>
-        <div id="naverIdLogin"></div>
-        <!-- //네이버아이디로로그인 버튼 노출 영역 -->
+         <!--<div id="naverIdLogin"></div>
+        //네이버아이디로로그인 버튼 노출 영역 -->
 
-        <!-- 네이버아디디로로그인 초기화 Script -->
+        <!-- 네이버아디디로로그인 초기화 Script 
         <script type="text/javascript">
           var naverLogin = new naver.LoginWithNaverId(
             {
@@ -71,7 +71,7 @@ session_start();
           /* 설정정보를 초기화하고 연동을 준비 */
           naverLogin.init();
 
-        </script>
+        </script>-->
       </div>
     </div>
   </div>
