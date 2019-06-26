@@ -262,12 +262,15 @@ header('P3P: CP="NOI CURa ADMa DEVa TAIa OUR DELa BUS IND PHY ONL UNI COM NAV IN
                <img src="image/facebook_logo.png" width=5%>
             </a>   -->
 
-          <div class="fb-share-button" data-href="http://192.168.81.1:82/ReadingToday/showingColor.php?id=<?php echo substr($cellColor,1,6); ?>" data-layout="button" data-size="large">
-            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F192.168.81.1%3A82%2FReadingToday%2FshowingColor.php%3Fid%3D00ffff&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">공유하기</a>
-          </div>
+        <div class="fb-share-button" data-href="https://eveyoung.000webhostapp.com/ReadingToday/showingColor.php?id=<?php echo substr($cellColor,1,6); ?>" data-layout="button" data-size="small">
+          <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Feveyoung.000webhostapp.com%2FReadingToday%2FshowingColor.php%3Fid%3Dff00ff&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">공유하기</a>
+        </div>
+
             <a href="javascript:shareTW()" title="twitter 공유">
-              <img src="image/twitter.png" width=5%>
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </a>
+              
             </div>
           </div>
         </div>
@@ -328,7 +331,8 @@ header('P3P: CP="NOI CURa ADMa DEVa TAIa OUR DELa BUS IND PHY ONL UNI COM NAV IN
     <script>
       function shareTW()
       {
-        var wurl = "http://192.168.81.1:82/ReadingToday/showingColor.php?id=<?php echo substr($cellColor,1,6); ?>";
+        var wurl = "https://eveyoung.000webhostapp.com/ReadingToday/showingColor.php?id=<?php echo substr($cellColor,1,6); ?>";
+		  
         //alert("공유 주소" + wurl);
         window.open("http://twitter.com/intent/tweet?text="+"읽기일기"+"&url="+ wurl);
       }
