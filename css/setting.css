@@ -88,7 +88,7 @@ input:active, input:focus {
     font-size: 25px;
     height: 50px;
     width: 60%;
-    margin: 1vh 0;
+    margin: 15px 0;
     border: none;
     outline: transparent;
     border-bottom: 2px solid rgb(223, 223, 223);
@@ -104,9 +104,9 @@ input:active, input:focus {
 }
 
 .colorPick{
-    font-size: 1.2em;
+    font-size: 17px;
     border: none;
-    margin: 2vh 0;
+    margin: 30px 0;
     font-weight: bold;
 }
 
@@ -121,10 +121,10 @@ input[type=color]{
 
 
 input[type=submit], input[type=reset], button{
-    height: 3vh;
+    height: 20px;
     border: none;
     background-color: white;
-    font-size: 1.5em;
+    font-size: 20px;
 
 }
 
