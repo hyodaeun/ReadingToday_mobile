@@ -23,14 +23,18 @@ header('P3P: CP="NOI CURa ADMa DEVa TAIa OUR DELa BUS IND PHY ONL UNI COM NAV IN
 <html>
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>읽기일기</title>
   <link rel="stylesheet" type="text/css" href="./css/mydiary.css?ver7">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="./javascript/mydiaryFunction.js"></script>
-    
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <link rel="shortcut icon" href="./image/logoforpages" />
+  <link rel="icon" href="./image/logoforpages.png">
+
   <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.3&appId=2226372474098662&autoLogAppEvents=1"></script>
-    
+
   <meta property="og:type" content="website">
     <meta property="og:title" content="읽기일기">
     <meta property="og:description" content="읽기일기의 일기를 공유">
@@ -171,34 +175,82 @@ header('P3P: CP="NOI CURa ADMa DEVa TAIa OUR DELa BUS IND PHY ONL UNI COM NAV IN
 
     <!-- 칸 클릭시 아이디 불러오는 JS 코드 (가공 필요) -->
     <script type = "text/javascript">
-      $("document").ready(function() {
-        if('<?php echo $tableID ?>'){
-            if('<?php echo $tableID ?>' != "undefined"){
-              jQuery('#DialogOutLogin').css("display", "block");
-              jQuery('#box').css("display", "block");
+    $("document").ready(function() {
+            if('<?php echo $tableID ?>'){
+                if('<?php echo $tableID ?>' != "undefined"){
+                  jQuery('#DialogOutLogin').css("display", "block");
+                  jQuery('#box').css("display", "block");
+                }
             }
-        }
-        $("#tables td").click(function() {
-          <?php
-          $todayDate = date('Y-m-d', time());
-          $dateSeperateMonth = substr($todayDate, 5, 2);
-          if (!(strcmp(substr($dateSeperateMonth, 0, 1), "0"))) {
-              $dateSeperateMonth = substr($dateSeperateMonth, 1);
-          }
-          $dateSeperateDay = substr($todayDate, 8, 2);
-          $checkToday = $dateSeperateMonth.$dateSeperateDay;
-          ?>
-            console.log(<?php echo $checkToday ?>);
-            var tableID = $(this).attr("id");
-            var checkAfterDate = tableID.substr(4);
-            if(checkAfterDate > <?php echo $checkToday ?>){
-              alert("내일은 아직 오지 않았어요.");
-            }else{
-            window.location.href="MyDiary.php?tableID="+tableID+"&sqlSent="
-                                  +  "select * from eachrecord where id ='<?php echo $id; ?>' and todayblock ='" + tableID+"'"; // POST 방식으로 php로 js 변수 넘김
-            }
-        });
-          
+            $("#tables td").click(function() {
+              <?php
+              $todayDate = date('Y-m-d', time());
+              $dateSeperateMonth = substr($todayDate, 5, 2);
+              if (!(strcmp(substr($dateSeperateMonth, 0, 1), "0"))) {
+                  $dateSeperateMonth = substr($dateSeperateMonth, 1);
+              }
+              $dateSeperateDay = substr($todayDate, 8, 2);
+              $checkToday = $dateSeperateMonth.$dateSeperateDay;
+              ?>
+                console.log(<?php echo $checkToday ?>);
+                var tableID = $(this).attr("id");
+                var checkAfterDate = tableID.substr(4);
+
+                if(checkAfterDate.length == 4){
+                  var checkLessMonth = checkAfterDate.substr(0, 2);
+                  var checkLessDay = checkAfterDate.substr(2);
+                }else{
+                  var checkLessMonth = checkAfterDate.substr(0, 1);
+                  var checkLessDay = checkAfterDate.substr(1);
+                }
+
+                switch(checkLessMonth){
+                  case "1": case "3": case "5": case "7":
+                  case "8": case "10": case "12":
+                    if(checkAfterDate > <?php echo $checkToday ?>){
+                      swal("내일은 아직 오지 않았어요");
+                    }else{
+                    window.location.href="MyDiary.php?tableID="+tableID+"&sqlSent="
+                                          +  "select * from eachrecord where id ='<?php echo $id; ?>' and todayblock ='" + tableID+"'"; // POST 방식으로 php로 js 변수 넘김
+                    }
+                    break;
+                  case "4": case "6": case "9": case "11":
+                    if(checkLessDay == 31){
+                      swal({
+                        text : "없는 날입니다",
+                        confirmButtonColor : " #A99F92",
+                      }).then(function() {
+                        window.location.href="MyDiary.php";
+                      });
+                    }else{
+                      if(checkAfterDate > <?php echo $checkToday ?>){
+                        swal("내일은 아직 오지 않았어요");
+                      }else{
+                      window.location.href="MyDiary.php?tableID="+tableID+"&sqlSent="
+                                            +  "select * from eachrecord where id ='<?php echo $id; ?>' and todayblock ='" + tableID+"'"; // POST 방식으로 php로 js 변수 넘김
+                      }
+                    }
+                    break;
+                  case "2":
+                    if(checkLessDay >= 29){
+                      swal({
+                        text : "없는 날입니다",
+                        confirmButtonColor : " #A99F92",
+                      }).then(function() {
+                        window.location.href="MyDiary.php";
+                      })
+                    }else{
+                      if(checkAfterDate > <?php echo $checkToday ?>){
+                        swal("내일은 아직 오지 않았어요");
+                      }else{
+                      window.location.href="MyDiary.php?tableID="+tableID+"&sqlSent="
+                                            +  "select * from eachrecord where id ='<?php echo $id; ?>' and todayblock ='" + tableID+"'"; // POST 방식으로 php로 js 변수 넘김
+                      }
+                    }
+                    break;
+                }// switch
+
+          });
         $("body").click(function() {
           console.log($(event.target).is("#DialogOutLogin"));
           if($(event.target).is("#DialogOutLogin")){
@@ -206,7 +258,7 @@ header('P3P: CP="NOI CURa ADMa DEVa TAIa OUR DELa BUS IND PHY ONL UNI COM NAV IN
           }
           console.log("clicked");
         });
-          
+
       });
     </script>
     <div class="mainForm">
@@ -266,11 +318,9 @@ header('P3P: CP="NOI CURa ADMa DEVa TAIa OUR DELa BUS IND PHY ONL UNI COM NAV IN
           <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Feveyoung.000webhostapp.com%2FReadingToday%2FshowingColor.php%3Fid%3Dff00ff&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">공유하기</a>
         </div>
 
-            <a href="javascript:shareTW()" title="twitter 공유">
-                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
-                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-            </a>
-              
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="오늘 나의 색깔은?" data-url="https://eveyoung.000webhostapp.com/ReadingToday/showingColor.php?id=<?php echo substr($cellColor,1,6); ?>"
+          data-hashtags="읽기일기" data-lang="ko" data-show-count="false">공유하기</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
           </div>
         </div>
@@ -326,13 +376,14 @@ header('P3P: CP="NOI CURa ADMa DEVa TAIa OUR DELa BUS IND PHY ONL UNI COM NAV IN
     ?>
     </div>
     <?php
+      echo '<br />';
       include 'chart.php';
     ?>
     <script>
       function shareTW()
       {
         var wurl = "https://eveyoung.000webhostapp.com/ReadingToday/showingColor.php?id=<?php echo substr($cellColor,1,6); ?>";
-		  
+
         //alert("공유 주소" + wurl);
         window.open("http://twitter.com/intent/tweet?text="+"읽기일기"+"&url="+ wurl);
       }

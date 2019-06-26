@@ -1,7 +1,11 @@
 <?php
   session_start();
   include 'default.php';
-
+  echo '<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>';
+?>
+<script type="text/javascript">
+window.onload = function () {
+  <?php
   $selectFeel = $_POST['select-superpower'];
   $diaryContent = $_POST['diary'];
 
@@ -25,13 +29,36 @@
   $row = mysqli_affected_rows($connect);
 
   if($row >= 1){
-    echo "<script>alert('입력 성공');</script>";
 ?>
-      <script>  window.location.href="MyDiary.php?tableID=<?php echo $selectBlockId; ?>&sqlSent="
-                              +  "select * from eachrecord where id ='<?php echo $testID; ?>' and todayblock ='<?php echo $selectBlockId; ?>'"</script>
+var url = "MyDiary.php?tableID=<?php echo $selectBlockId; ?>&sqlSent="
+                              +  "select * from eachrecord where id ='<?php echo $testID; ?>' and todayblock ='<?php echo $selectBlockId; ?>'";
+
+window.location.href= url;
 
 <?php
-  }else{
-    echo "<script>alert('입력 실패'); location.href='MyDiary.php';</script>";
-  }
+}else{ ?>
+  swal({
+    title : "일기 작성 실패",
+    text : "내용을 다시 확인해주세요",
+  }).then(function() {
+    window.location.href=url;
+  })
+<?php  }
 ?>
+}
+</script>
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>일기 입력 중</title>
+    <link rel="stylesheet" href="./css/default.css?ver1">
+    <link rel="shortcut icon" href="./image/logoforpages" />
+    <link rel="icon" href="./image/logoforpages.png">
+
+  </head>
+  <body>
+
+  </body>
+</html>

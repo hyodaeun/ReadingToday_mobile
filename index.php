@@ -13,32 +13,14 @@ session_start();
   src="https://code.jquery.com/jquery-3.4.1.js"
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
-  <!--주석 처리한 부분들은 구글 로그인 부분들입니다-->
-  <!-- <meta name="google-signin-scope" content="profile email">
-  <meta name="google-signin-client_id" content="GOOGLEAPIID">
-  <script src="https://apis.google.com/js/platform.js" async defer></script> -->
+  <link rel="icon" href="./image/logoforpages.png">
+
   <title>읽기일기</title>
     <!-- 05-13 효은 수정 -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="./css/index.css?ver=2">
-  <link rel="shortcut icon" href="#" />
+  <link rel="stylesheet" type="text/css" href="./css/index.css?ver3">
+  <link rel="shortcut icon" href="./image/logoforpages" />
 
-  <!-- <script>
-    function onSignIn(googleUser) {
-      // Useful data for your client-side scripts:
-      var profile = googleUser.getBasicProfile();
-      console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-      console.log('Full Name: ' + profile.getName());
-      console.log('Given Name: ' + profile.getGivenName());
-      console.log('Family Name: ' + profile.getFamilyName());
-      console.log("Image URL: " + profile.getImageUrl());
-      console.log("Email: " + profile.getEmail());
-
-      // The ID token you need to pass to your backend:
-      var id_token = googleUser.getAuthResponse().id_token;
-      console.log("ID Token: " + id_token);
-    };
-  </script> -->
 </head>
 
 <body>
@@ -56,7 +38,7 @@ session_start();
          <!--<div id="naverIdLogin"></div>
         //네이버아이디로로그인 버튼 노출 영역 -->
 
-        <!-- 네이버아디디로로그인 초기화 Script 
+        <!-- 네이버아디디로로그인 초기화 Script
         <script type="text/javascript">
           var naverLogin = new naver.LoginWithNaverId(
             {
@@ -92,12 +74,12 @@ session_start();
           </fieldset>
           <hr />
           <fieldset class="colorPick">
-            <label>REALLY GOOD! </label><input type="color" name="em1Pick" value="#ff9898">
-            <label>GOOD </label><input type="color" name="em2Pick" value="#ffd398">
-            <label>NOT BAD </label><input type="color" name="em3Pick" value="#fff898"><br /><br />
-            <label>ANGRY </label><input type="color" name="em4Pick" value="#b3ff98">
-            <label>SAD </label><input type="color" name="em5Pick" value="#98b2ff">
-            <label>BAD </label><input type="color" name="em6Pick" value="#bf98ff">
+            <label>아주 좋아요 </label><input type="color" name="em1Pick" value="#ff9898">
+            <label>좋아요 </label><input type="color" name="em2Pick" value="#ffd398">
+            <label>나쁘지 않아요 </label><input type="color" name="em3Pick" value="#fff898"><br /><br />
+            <label>화나요 </label><input type="color" name="em4Pick" value="#b3ff98">
+            <label>슬퍼요 </label><input type="color" name="em5Pick" value="#98b2ff">
+            <label>나빠요 </label><input type="color" name="em6Pick" value="#bf98ff">
           </fieldset>
           <fieldset class="buttons">
             <input type="submit" class="buttonInput" id="signinBtn" name="submit_signin" value="회원가입">

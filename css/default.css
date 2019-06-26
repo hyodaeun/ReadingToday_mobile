@@ -1,2 +1,17 @@
 @import url(//fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
  * { font-family: 'Jeju Myeongjo', serif; }
+ .swal-button {
+   background-color:  #A99F92 !important;
+   font-size: 20pt;
+   padding: 15px 29px;
+ }
+.swal-modal{
+  width: 70%;
+  height: 15%;
+}
+.swal-title{
+  font-size: 35pt;
+}
+.swal-text{
+  font-size: 20pt;
+}

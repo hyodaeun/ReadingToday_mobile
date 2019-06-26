@@ -118,9 +118,11 @@
   <html>
     <head>
       <meta charset="utf-8">
-      <title>MONTHLY</title>
+      <title>읽기일기 월별통계</title>
       <link rel="stylesheet" href="./css/monthly.css?ver=1">
       <link rel="stylesheet" type="text/css" href="./css/mydiary.css?ver1">
+      <link rel="shortcut icon" href="./image/logoforpages" />
+      <link rel="icon" href="./image/logoforpages.png">
 
       <style media="screen">
         .outerDiv{
@@ -148,13 +150,13 @@
             <a href="#" class="menutag"  >기분별 색</a>
               <!-- <button type="button" class="dropbtn">기분별 색</button> -->
               <div class="dropdown-content">
-                <a href="#" id="dropRG">REALLY GOOD</a>
-                <a href="#" id="dropGOOD">GOOD</a>
-                <a href="#" id="dropNB">NOT BAD</a>
-                <a href="#" id="dropANGRY">ANGRY</a>
-                <a href="#" id="dropSAD">SAD</a>
-                <a href="#" id="dropBAD">BAD</a>
-              </div>
+              <a href="#" id="dropRG">아주 좋아요</a>
+              <a href="#" id="dropGOOD">좋아요</a>
+              <a href="#" id="dropNB">나쁘지 않아요</a>
+              <a href="#" id="dropANGRY">화나요</a>
+              <a href="#" id="dropSAD">슬퍼요</a>
+              <a href="#" id="dropBAD">나빠요</a>
+            </div>
           </div>
           <a href="monthly.php" class="menuhover"  >월별통계</a>
           <a href="MyDiary.php" class="menulogo">
@@ -278,7 +280,7 @@
       ?>
       <div style="padding:15px"></div>
       <?php
-        echo '<p></p>';
+        echo '<br>';
         include 'chart.php';
       ?>
     </body>

@@ -8,7 +8,9 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="./css/setting.css">
-    <title></title>
+    <link rel="shortcut icon" href="./image/logoforpages" />
+    <link rel="icon" href="./image/logoforpages.png">
+    <title>읽기일기 정보수정</title>
   </head>
   <body>
     <div id="DialogOutSignin">

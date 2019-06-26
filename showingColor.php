@@ -34,7 +34,11 @@ function showText(getDiv, color){
       }
     </style>
     <meta charset="utf-8">
-    <title>TODAY'S FEELING</title>
+    <title>읽기일기 감정공유</title>
+    <link rel="stylesheet" href="./css/default.css?ver1">
+    <link rel="shortcut icon" href="./image/logoforpages" />
+    <link rel="icon" href="./image/logoforpages.png">
+
   </head>
   <body>
     <div id="textHere">
